@@ -20,11 +20,20 @@ led = LEDStrip(driver)
 import bibliopixel.colors as colors
 rainbow = [colors.Red, colors.Orange, colors.Yellow, colors.Green, colors.Blue, colors.Purple]
 
+for i in range(0, 32):
+    time.sleep(.05)
+    led.set(i, colors.White)
+    led.update()
+
 for color in rainbow:
-    time.sleep(.5)
+    time.sleep(.1)
+    led.all_off()
+    led.update()
+    time.sleep(.1)
     led.fill(color)
     led.update()
 
+time.sleep(.1)
 led.all_off()
 led.update()
 

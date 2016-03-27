@@ -77,7 +77,7 @@
     <script>
 
     function renderWheel(){
-      var cw = Raphael.colorwheel($("#wheel .colorwheel")[0],500, 180),
+      var cw = Raphael.colorwheel($("#wheel .colorwheel")[0],400, 180),
           onchange_el = $("#callback_example .onchange"),
           ondrag_el = $("#callback_example .ondrag");
           cw.color("#00F");
@@ -85,10 +85,23 @@
       cw.onchange(function(color)
         {
           var colors = [parseInt(color.r), parseInt(color.g), parseInt(color.b)]
-          console.log("RGB:"+colors.join(", "))
+          postColor(colors)
         })
 
     }
+
+function postColor(colors) {
+$.ajax({
+    url: '/set',
+    data: JSON.stringify(colors),
+    type: 'POST',
+    contentType: 'application/json;charset=UTF-8',
+    success: function(response) {
+        console.log(response);
+        },
+  })
+}
+
 
     renderWheel()
 
