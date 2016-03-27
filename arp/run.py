@@ -20,8 +20,6 @@ led = LEDStrip(driver)
 import bibliopixel.colors as colors
 rainbow = [colors.Red, colors.Orange, colors.Yellow, colors.Green, colors.Blue, colors.Purple]
 
-led.masterBrightness = 100
-
 for color in rainbow:
     time.sleep(.5)
     led.fill(color)
