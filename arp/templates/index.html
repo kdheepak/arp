@@ -60,16 +60,16 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-sm-2">
             </div>
 
-            <div class="col-sm-6">
-            <div id="wheel" style="text-align:center">
-                  <div class="colorwheel"></div>
+            <div class="col-sm-8">
+            <div id="wheel">
+                  <div class="colorwheel" style="margin:auto; width:50%"></div>
             </div>
             </div>
 
-            <div class="col-sm-3">
+            <div class="col-sm-2">
             </div>
         </div><!-- /row -->
     </div><!-- /container -->
@@ -84,7 +84,7 @@
     <script>
 
     function renderWheel(){
-      var cw = Raphael.colorwheel($("#wheel .colorwheel")[0],350, 180),
+      var cw = Raphael.colorwheel($("#wheel .colorwheel")[0],250, 180),
           onchange_el = $("#callback_example .onchange"),
           ondrag_el = $("#callback_example .ondrag");
           cw.color("#00F");
@@ -112,7 +112,6 @@ $.ajax({
 
     renderWheel()
 
-$(".colorwheel").css("width","")
 
     </script>
 
