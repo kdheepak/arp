@@ -1,6 +1,7 @@
 
 import sys
 import time
+import math
 
 sys.path.append('/home/pi/GitRepos/BiblioPixel')
 sys.path.append('/home/pi/GitRepos/BiblioPixelAnimations')
@@ -165,20 +166,25 @@ list_colors = [
         colors.Orchid,
         colors.OldLace,]
 
+sleep_time = 0.05
+
 while True:
 
     for color in list_colors:
 
         for i in range(0, 32):
-            time.sleep(.075)
-            led.set(i, color)
+            t = 0.05
+            time.sleep(t)
+            led.fill(color)
             led.masterBrightness = int(i/32.0 * 255)
             led.update()
 
         for i in range(0, 32):
-            time.sleep(.075)
-            led.set(i, color)
+            t = 0.05
+            time.sleep(t)
+            led.fill(color)
             led.masterBrightness = int((32-i)/32.0 * 255)
             led.update()
+
 
 
